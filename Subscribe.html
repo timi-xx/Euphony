@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscribe | Euphony</title>
+  <link rel="icon" href="Euphony logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f1a;
+  font-family: 'Segoe UI';
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px 20px;
+}
+
+.logo-glow {
+  margin-bottom: 20px;
+}
+
+.logo-glow img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  filter: blur(0.1px) brightness(110%) drop-shadow(0 0 25px #00ccff);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    filter: blur(0.1px) brightness(110%) drop-shadow(0 0 25px #00ccff);
+  }
+  50% {
+    filter: blur(0.1px) brightness(110%) drop-shadow(0 0 40px #00ccff);
+  }
+}
+
+.brand-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: 2px solid #ffffff40;
+  background: transparent;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 16px;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #cccccc;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0 25px;
+}
+
+.options a {
+  color: #b0b0b0;
+  text-decoration: none;
+}
+
+.subscribe-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.subscribe-btn a {
+  text-decoration: none;
+  color: #0c1a23;
+}
+
+.extra-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.secondary {
+  flex: 1;
+  padding: 12px;
+  border-radius: 15px;
+  background: transparent;
+  border: 2px solid #ffffff40;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.secondary i {
+  font-size: 16px;
+}
+</style>
+<body>
+  <div class="login-container">
+    <div class="logo-glow">
+      <img src="Euphony logo.png" alt="Euphony Logo" />
+    </div>
+
+    <h1 class="brand-title">Euphony</h1>
+
+    <form class="login-form" id="login-form">
+      <input type="email" placeholder="Email" required />
+      <input type="password" id="Password" name="password" placeholder="Enter Password" required />
+      <input type="password" id="confirmPassword" name="confirm-password" placeholder="Confirm Password" required />
+      
+      <div class="options">
+        <label><a href="#">Forgot Password?</label>
+        <a href="Login.html">Already a member?</a>
+      </div>
+
+      <button type="submit" class="subscribe-btn"><a href="Login.html">CREATE ACCOUNT</a></button>
+
+      <!--<div class="extra-buttons">
+        <button class="secondary"><i class="fas fa-play"></i> Stay on site</button>
+        <button class="secondary"><i class="fas fa-user"></i> Get the app</button>
+      </div>-->
+    </form>
+  </div>
+    <script>
+        const form = document.getElementById("login-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const password = document.getElementById("Password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            alert("Account created successfully!");
+            setTimeout(() => {
+                window.location.href = "Login.html";
+            }, 1000);
+        });
+    </script>
+    </body>
+</html>
